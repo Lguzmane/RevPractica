@@ -1,0 +1,196 @@
+@use "./variables" as *;
+
+
+/* ==========================================================
+   ESTILOS COMPARTIDOS ENTRE PÁGINAS
+========================================================== */
+
+
+/* ==========================================================
+   FONDO BASE DE LAS PÁGINAS
+========================================================== */
+
+.home,
+.app-page,
+.about-page,
+.contact-page {
+  background: $color-white;
+  color: $color-black;
+}
+
+
+/* ==========================================================
+   HERO FOTOGRÁFICO
+   APP + NOSOTROS + CONTACTO
+========================================================== */
+
+.app-hero,
+.about-hero,
+.contact-hero {
+  display: flex;
+  align-items: flex-end;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.app-hero__content,
+.about-hero__content,
+.contact-hero__content {
+  max-width: 520px;
+}
+
+.app-hero__title,
+.about-hero__title,
+.contact-hero__title {
+  margin: 0;
+
+  font-family: $font-primary;
+  font-weight: $font-bold;
+  line-height: 1.05;
+}
+
+.app-hero__subtitle,
+.about-hero__subtitle,
+.contact-hero__subtitle {
+  margin-top: 5px;
+  margin-bottom: 0;
+
+  font-family: $font-secondary;
+  line-height: 1.25;
+}
+
+
+/* ==========================================================
+   TÍTULOS DE SECCIÓN
+========================================================== */
+
+.home-monitor__title,
+.home-management__title,
+.home-field__title,
+.home-awards__title,
+
+.app-ai__title,
+.app-features__title,
+.app-process__title,
+.app-gallery__title,
+
+.about-company__title,
+.about-values__title,
+.about-news__title,
+
+.contact-main__title,
+.contact-direct__title {
+  font-family: $font-primary;
+  font-size: $font-section-title;
+  font-weight: $font-bold;
+}
+
+
+/* ==========================================================
+   EYEBROWS
+========================================================== */
+
+.app-ai__eyebrow,
+.app-features__eyebrow,
+.app-process__eyebrow,
+.app-gallery__eyebrow,
+
+.home-cta__eyebrow,
+.app-cta__eyebrow,
+.about-cta__eyebrow,
+
+.contact-direct__eyebrow {
+  display: block;
+
+  font-family: $font-secondary;
+  font-weight: $font-bold;
+
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   CTA NEGRO
+   HOME + APP + NOSOTROS
+========================================================== */
+
+.home-cta,
+.app-cta,
+.about-cta {
+  background: $color-black;
+  color: $color-white;
+}
+
+.home-cta__title,
+.app-cta__title,
+.about-cta__title {
+  color: $color-white;
+
+  font-family: $font-primary;
+  font-size: $font-section-title;
+  font-weight: $font-bold;
+}
+
+.home-cta__button,
+.app-cta__button,
+.about-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: $radius-sm;
+
+  background: $color-primary;
+  color: $color-black;
+
+  font-family: $font-secondary;
+  font-weight: $font-semibold;
+}
+
+
+/* ==========================================================
+   BOTONES NEGROS
+========================================================== */
+
+.home-hero__button,
+.contact-form__button {
+  border: 0;
+
+  background: $color-black;
+  color: $color-white;
+
+  font-family: $font-secondary;
+  font-weight: $font-semibold;
+}
+
+
+/* ==========================================================
+   ELEMENTOS CON BORDE ÁMBAR
+========================================================== */
+
+.home-monitor__item,
+.home-awards__card,
+.about-values__item,
+.about-news__card {
+  border: 1px solid $color-primary;
+
+  background: $color-white;
+}
+
+
+/* ==========================================================
+   RESPONSIVE COMPARTIDO
+========================================================== */
+
+@media (max-width: $breakpoint-md) {
+  .app-hero,
+  .about-hero,
+  .contact-hero {
+    min-height: auto;
+    padding: 95px 0 35px;
+  }
+}
+
