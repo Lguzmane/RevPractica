@@ -14,7 +14,7 @@ $color-white: #FFFFFF;
 
 
 /* ==========================================================
-   COLORES USADOS EN LAS PANTALLAS
+   COLORES DE APOYO
 ========================================================== */
 
 $color-honey: #F4CB71;
@@ -58,34 +58,72 @@ $footer-border: #E5E5E5;
 ========================================================== */
 
 $color-primary-hover: #D99608;
+$color-orange-hover: #E97914;
 
 
 /* ==========================================================
-   TIPOGRAFÍAS DEL MANUAL
+   TIPOGRAFÍAS
 ========================================================== */
 
-$font-primary: "Times New Roman MT Condensed", serif;
+$font-primary: "Times New Roman MT", serif;
 $font-secondary: "Be Vietnam", sans-serif;
 
 
 /* ==========================================================
-   PESOS USADOS
+   PESOS TIPOGRÁFICOS
 ========================================================== */
 
 $font-regular: 400;
+$font-medium: 500;
 $font-semibold: 600;
 $font-bold: 700;
 
 
 /* ==========================================================
-   TAMAÑOS QUE SE REPITEN
+   TAMAÑOS TIPOGRÁFICOS COMPARTIDOS
 ========================================================== */
 
-$font-section-title: 2rem;
+
+/* HERO HOME */
+
+$font-hero-title: 52px;
+$font-hero-highlight: 42px;
+$font-hero-body: 17px;
+
+
+/* CONTENIDO GENERAL */
+
+$font-section-title: 34px;
+$font-subtitle: 16px;
+$font-body: 14px;
+$font-small: 12px;
+
+/* ==========================================================
+   ESPACIADO COMPARTIDO
+========================================================== */
+
+$section-padding: 100px;
+$section-gap: 60px;
+$section-image-height: 400px;
 
 
 /* ==========================================================
-   RADIOS QUE SE REPITEN
+   CONTENEDOR
+========================================================== */
+
+$container-max: 1120px;
+$container-side: 60px;
+
+
+/* ==========================================================
+   IMÁGENES DE SECCIÓN
+========================================================== */
+
+$section-image-height: 360px;
+
+
+/* ==========================================================
+   RADIOS
 ========================================================== */
 
 $radius-sm: 8px;
@@ -94,7 +132,7 @@ $radius-lg: 12px;
 
 
 /* ==========================================================
-   BREAKPOINTS PRESENTES EN LAS PANTALLAS
+   BREAKPOINTS
 ========================================================== */
 
 $breakpoint-lg: 991.98px;
