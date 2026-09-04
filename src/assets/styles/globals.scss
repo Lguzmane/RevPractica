@@ -164,82 +164,6 @@ p {
 
 
 /* ==========================================================
-   HERO HOME
-========================================================== */
-
-.home .page-hero {
-  position: relative;
-
-  width: 100%;
-  min-height: 0;
-  aspect-ratio: 16 / 9;
-
-  padding: 0;
-
-  display: flex;
-  align-items: center;
-
-  overflow: hidden;
-}
-
-.home-hero__background {
-  position: absolute;
-  inset: 0;
-
-  z-index: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  object-position: center;
-
-  pointer-events: none;
-}
-
-.home .page-hero .container {
-  position: relative;
-
-  z-index: 1;
-}
-
-.home .page-hero__content {
-  width: 46%;
-  max-width: 500px;
-
-  transform: translateY(65px);
-}
-
-.home .page-hero h1 {
-  margin-bottom: 14px;
-
-  font-size: $font-hero-title;
-  line-height: 1;
-}
-
-.home .page-hero h1 span {
-  display: block;
-
-  color: $color-primary;
-
-  font-size: $font-hero-highlight;
-  font-weight: $font-regular;
-  line-height: 1.05;
-}
-
-.home .page-hero p {
-  margin-bottom: 9px;
-
-  color: $color-brown;
-
-  font-size: $font-hero-body;
-  line-height: 1.45;
-}
-
-.home .page-hero p:last-of-type {
-  margin-bottom: 22px;
-}
-/* ==========================================================
    SECCIONES GENERALES
 ========================================================== */
 
@@ -249,7 +173,7 @@ p {
 
 .section__row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   align-items: center;
 
@@ -259,23 +183,24 @@ p {
 .section__content {
   width: 100%;
   max-width: 460px;
+
+  justify-self: center;
 }
 
-.section__title {
-  margin-bottom: 18px;
-}
+.section__image {
+  width: 100%;
+  max-width: 450px;
 
-.section__text {
-  margin-bottom: 28px;
+  justify-self: center;
 }
-
 
 /* ==========================================================
-   IMÁGENES
+   IMÁGENES DE SECCIÓN
 ========================================================== */
 
 .section__image {
   width: 100%;
+  max-width: 450px;
 }
 
 .section__image img {
@@ -317,7 +242,7 @@ p {
   display: flex;
   flex-direction: column;
 
-  gap: 12px;
+  gap: 14px;
 }
 
 .feature-item {
@@ -341,7 +266,7 @@ p {
 }
 
 .feature-title {
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 
   font-family: $font-secondary;
   font-weight: $font-bold;
@@ -357,17 +282,21 @@ p {
 ========================================================== */
 
 .section--honey {
-  width: calc(100% - 28px);
+  width: calc(100% - 56px);
+  max-width: 1180px;
 
   margin-right: auto;
   margin-left: auto;
 
-  padding-right: 40px;
-  padding-left: 40px;
+  padding: 60px 0;
 
   border-radius: $radius-lg;
 
   background: $color-honey;
+}
+
+.section--honey .container {
+  width: calc(100% - 90px);
 }
 
 
@@ -383,7 +312,9 @@ p {
 }
 
 .card {
-  padding: 18px;
+  min-height: 150px;
+
+  padding: 22px 20px;
 
   border: 1px solid $color-primary;
   border-radius: $radius-md;
@@ -392,7 +323,7 @@ p {
 }
 
 .card-title {
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 
   font-family: $font-secondary;
   font-weight: $font-bold;
@@ -422,14 +353,6 @@ p {
   font-family: $font-secondary;
   font-size: $font-small;
   font-weight: $font-semibold;
-
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.button:hover {
-  transform: translateY(-1px);
 }
 
 .button--dark {
@@ -475,6 +398,7 @@ p {
   text-transform: uppercase;
 }
 
+
 /* ==========================================================
    CTA GLOBAL
 ========================================================== */
@@ -495,26 +419,44 @@ p {
   width: calc(100% - (#{$container-side} * 2));
   max-width: $container-max;
 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: $section-gap;
+
   margin: 0 auto;
 }
 
 .cta__content {
+  width: 100%;
   max-width: 520px;
 }
 
-.cta .eyebrow {
+.cta__visual {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta__visual img {
   display: block;
 
+  max-width: 100%;
+  max-height: 300px;
+
+  object-fit: contain;
+}
+
+.cta .eyebrow {
   margin-bottom: 14px;
 
   color: $color-primary;
 
-  font-family: $font-secondary;
-  font-size: $font-small;
-  font-weight: $font-bold;
   letter-spacing: 0.12em;
-
-  text-transform: uppercase;
 }
 
 .cta h2 {
@@ -625,36 +567,6 @@ p {
 
 
 /* ==========================================================
-   RESPONSIVE CTA
-========================================================== */
-
-@media (max-width: $breakpoint-md) {
-
-  .cta {
-    min-height: 360px;
-
-    padding: 55px 0;
-  }
-
-  .cta .container {
-    width: calc(100% - 40px);
-  }
-}
-
-
-@media (max-width: $breakpoint-sm) {
-
-  .cta {
-    min-height: 330px;
-
-    padding: 48px 0;
-  }
-
-  .cta .container {
-    width: calc(100% - 28px);
-  }
-}
-/* ==========================================================
    NAVBAR
 ========================================================== */
 
@@ -754,6 +666,9 @@ p {
   background: $color-white;
   color: $text-primary;
 
+
+  /* CONTENEDOR */
+
   &__container {
     width: calc(100% - (#{$container-side} * 2));
     max-width: $container-max;
@@ -762,9 +677,7 @@ p {
   }
 
 
-  /* ========================================================
-     PARTE SUPERIOR
-  ======================================================== */
+  /* PARTE SUPERIOR */
 
   &__top {
     display: grid;
@@ -811,76 +724,74 @@ p {
     min-width: 0;
   }
 
- &__title {
-  margin: 0 0 8px;
+  &__title {
+    margin: 0 0 8px;
 
-  color: $text-primary;
+    color: $text-primary;
 
-  font-family: $font-secondary;
-  font-size: $font-small;
-  font-weight: $font-bold;
-  line-height: 1.2;
+    font-family: $font-secondary;
+    font-size: $font-small;
+    font-weight: $font-bold;
+    line-height: 1.2;
 
-  text-transform: uppercase;
-}
+    text-transform: uppercase;
+  }
 
 
-/* ========================================================
-   TIENDAS
-======================================================== */
+  /* DESCARGA */
 
-&__download {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+  &__download {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-&__stores {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  &__stores {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 
-  gap: 0px;
+    gap: 0;
 
-  margin: 0 0 16px;
-  padding: 0;
-}
+    margin: 0 0 16px;
+    padding: 0;
+  }
 
-&__store-link {
-  display: block;
-
-  margin: 0;
-  padding: 0;
-
-  border: 0;
-  outline: 0;
-
-  background: transparent;
-
-  line-height: 0;
-
-  appearance: none;
-  -webkit-appearance: none;
-
-  img {
+  &__store-link {
     display: block;
 
-    width: auto;
-    height: 55px;
-
     margin: 0;
+    padding: 0;
 
-    object-fit: contain;
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    line-height: 0;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    img {
+      display: block;
+
+      width: auto;
+      height: 55px;
+
+      margin: 0;
+
+      object-fit: contain;
+    }
+
+    &:first-child {
+      margin-left: -5px;
+      margin-right: -3px;
+    }
   }
 
-  &:first-child {
-    margin-left: -5px;
-    margin-right: -3px;
-  }
-}
-  /* ========================================================
-     REDES
-  ======================================================== */
+
+  /* REDES */
 
   &__social-block {
     margin-top: 2px;
@@ -937,9 +848,7 @@ p {
   }
 
 
-  /* ========================================================
-     NAVEGACIÓN + LEGAL
-  ======================================================== */
+  /* NAVEGACIÓN + LEGAL */
 
   &__list {
     display: flex;
@@ -985,9 +894,7 @@ p {
   }
 
 
-  /* ========================================================
-     PARTE INFERIOR
-  ======================================================== */
+  /* PARTE INFERIOR */
 
   &__bottom {
     padding-top: 26px;
@@ -1035,9 +942,7 @@ p {
   }
 
 
-  /* ========================================================
-     LINKS LEGALES INFERIORES
-  ======================================================== */
+  /* LEGALES INFERIORES */
 
   &__legal-bottom {
     display: flex;
@@ -1100,8 +1005,9 @@ p {
   }
 }
 
+
 /* ==========================================================
-   RESPONSIVE
+   RESPONSIVE GLOBAL
 ========================================================== */
 
 @media (max-width: $breakpoint-lg) {
@@ -1136,42 +1042,79 @@ p {
     width: calc(100% - 32px);
   }
 
+
+  /* SECCIONES */
+
   .section {
-    padding: 60px 0;
+    padding: 75px 0;
   }
 
   .section__row {
     grid-template-columns: 1fr;
 
-    gap: 30px;
+    gap: 40px;
   }
 
   .section__image,
   .section__content {
-    order: initial;
-  }
+    max-width: 100%;
 
-  .section__content {
-    max-width: none;
+    order: initial;
+
+    justify-self: stretch;
   }
 
   .section__image img {
     height: 320px;
   }
 
+
+  /* TARJETAS */
+
   .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* BLOQUE AMARILLO */
+
+  .section--honey {
+    width: calc(100% - 40px);
+
+    padding: 50px 0;
+  }
+
+  .section--honey .container {
+    width: calc(100% - 60px);
+  }
+
+
+  /* CTA */
+
+  .cta {
+    min-height: 360px;
+
+    padding: 55px 0;
+  }
+
+  .cta .container {
+    width: calc(100% - 40px);
+
     grid-template-columns: 1fr;
+
+    gap: 35px;
   }
 
-  .home .page-hero {
-    min-height: 100vh;
-
-    padding: 120px 0 60px;
+  .cta__content {
+    max-width: none;
   }
 
-  .home .page-hero__content {
-    width: 65%;
+  .cta__visual {
+    justify-content: flex-start;
   }
+
+
+  /* NAVBAR */
 
   .navbar {
     top: 16px;
@@ -1198,6 +1141,9 @@ p {
     }
   }
 
+
+  /* FOOTER */
+
   .footer__top {
     grid-template-columns: 1fr 1fr;
   }
@@ -1211,24 +1157,56 @@ p {
     width: calc(100% - 28px);
   }
 
+
+  /* SECCIONES */
+
   .section {
-    padding: 50px 0;
+    padding: 60px 0;
   }
 
   .section__image img {
-    height: 260px;
+    height: 280px;
   }
+
+
+  /* BLOQUE AMARILLO */
 
   .section--honey {
-    width: calc(100% - 20px);
+    width: calc(100% - 28px);
 
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 40px 0;
   }
 
-  .home .page-hero__content {
-    width: 85%;
+  .section--honey .container {
+    width: calc(100% - 36px);
   }
+
+
+  /* TARJETAS */
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* CTA */
+
+  .cta {
+    min-height: 330px;
+
+    padding: 48px 0;
+  }
+
+  .cta .container {
+    width: calc(100% - 28px);
+  }
+
+  .cta__visual img {
+    max-height: 220px;
+  }
+
+
+  /* FOOTER */
 
   .footer__top {
     grid-template-columns: 1fr;

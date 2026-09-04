@@ -1,14 +1,36 @@
 import { Link } from "react-router-dom";
 
+import {
+  MdGraphicEq,
+  MdPsychology,
+  MdAppRegistration,
+  MdHistory,
+  MdNotificationsActive
+} from "react-icons/md";
+
+import {
+  FaTrophy,
+  FaStar,
+  FaMedal,
+  FaLightbulb,
+  FaGraduationCap,
+  FaHandshake
+} from "react-icons/fa";
+
 import heroImage from "../assets/images/hero-home.png";
 import monitorImage from "../assets/images/monitoreo-home.png";
 import managementImage from "../assets/images/todoloque-home.png";
 import fieldImage from "../assets/images/diseñadopara-home.png";
 
+import queenIcon from "../assets/images/reina_aurabee.png";
+import workerBeeIcon from "../assets/images/obrera_aurabee2.png";
+import crownIcon from "../assets/images/corona_aurabee.png";
+
 
 function Home() {
   return (
     <div className="home">
+
 
       {/* =====================================================
           HERO
@@ -68,7 +90,7 @@ function Home() {
       ===================================================== */}
 
       <section
-        className="section"
+        className="section home-monitor"
         id="monitoreo"
       >
 
@@ -77,10 +99,12 @@ function Home() {
           <div className="section__row section--image-left">
 
             <div className="section__image">
+
               <img
                 src={monitorImage}
                 alt="Colmena monitoreada con AuraBee"
               />
+
             </div>
 
 
@@ -97,13 +121,17 @@ function Home() {
               </p>
 
 
-              <div className="feature-list">
+              <div className="feature-list home-monitor__list">
 
-                <div className="feature-item">
 
-                  <span className="feature-dot" />
+                <div className="feature-item home-monitor__item">
+
+                  <span className="home-feature-icon home-feature-icon--yellow">
+                    <MdGraphicEq />
+                  </span>
 
                   <div>
+
                     <h3 className="feature-title">
                       Audio de la colmena
                     </h3>
@@ -112,16 +140,20 @@ function Home() {
                       Captura el zumbido de la colonia acercando el micrófono
                       del teléfono a la piquera.
                     </p>
+
                   </div>
 
                 </div>
 
 
-                <div className="feature-item">
+                <div className="feature-item home-monitor__item">
 
-                  <span className="feature-dot" />
+                  <span className="home-feature-icon home-feature-icon--orange">
+                    <MdPsychology />
+                  </span>
 
                   <div>
+
                     <h3 className="feature-title">
                       Análisis con IA
                     </h3>
@@ -130,16 +162,26 @@ function Home() {
                       Analiza el audio mediante un modelo de Deep Learning
                       especializado en patrones acústicos.
                     </p>
+
                   </div>
 
                 </div>
 
 
-                <div className="feature-item">
+                <div className="feature-item home-monitor__item">
 
-                  <span className="feature-dot" />
+                  <span className="home-feature-icon home-feature-icon--brown">
+
+                    <img
+                      src={queenIcon}
+                      alt=""
+                      aria-hidden="true"
+                    />
+
+                  </span>
 
                   <div>
+
                     <h3 className="feature-title">
                       Detección de la abeja reina
                     </h3>
@@ -147,9 +189,11 @@ function Home() {
                     <p className="feature-text">
                       Identifica patrones asociados a la ausencia de la reina.
                     </p>
+
                   </div>
 
                 </div>
+
 
               </div>
 
@@ -166,7 +210,7 @@ function Home() {
           GESTIÓN
       ===================================================== */}
 
-      <section className="section">
+      <section className="section home-management">
 
         <div className="container">
 
@@ -184,13 +228,17 @@ function Home() {
               </p>
 
 
-              <div className="feature-list">
+              <div className="feature-list home-management__list">
+
 
                 <div className="feature-item">
 
-                  <span className="feature-dot" />
+                  <span className="home-management__icon">
+                    <MdAppRegistration />
+                  </span>
 
                   <div>
+
                     <h3 className="feature-title">
                       Registro
                     </h3>
@@ -200,6 +248,7 @@ function Home() {
                       alfanumérico e incorpora información como raza de
                       abejas y tipo de cajón.
                     </p>
+
                   </div>
 
                 </div>
@@ -207,9 +256,12 @@ function Home() {
 
                 <div className="feature-item">
 
-                  <span className="feature-dot" />
+                  <span className="home-management__icon">
+                    <MdHistory />
+                  </span>
 
                   <div>
+
                     <h3 className="feature-title">
                       Control integral
                     </h3>
@@ -218,6 +270,7 @@ function Home() {
                       Mantén un historial de estados de cada colmena y
                       registra notas mediante voz.
                     </p>
+
                   </div>
 
                 </div>
@@ -225,9 +278,12 @@ function Home() {
 
                 <div className="feature-item">
 
-                  <span className="feature-dot" />
+                  <span className="home-management__icon">
+                    <MdNotificationsActive />
+                  </span>
 
                   <div>
+
                     <h3 className="feature-title">
                       Recordatorios
                     </h3>
@@ -236,9 +292,11 @@ function Home() {
                       Configura alertas de revisión según el historial
                       biológico y de riesgo detectado.
                     </p>
+
                   </div>
 
                 </div>
+
 
               </div>
 
@@ -246,10 +304,12 @@ function Home() {
 
 
             <div className="section__image">
+
               <img
                 src={managementImage}
                 alt="Gestión de colmenas con AuraBee"
               />
+
             </div>
 
           </div>
@@ -263,17 +323,19 @@ function Home() {
           APIARIO
       ===================================================== */}
 
-      <section className="section section--honey">
+      <section className="section section--honey home-field">
 
         <div className="container">
 
           <div className="section__row section--image-left">
 
             <div className="section__image">
+
               <img
                 src={fieldImage}
                 alt="Trabajo en el apiario"
               />
+
             </div>
 
 
@@ -292,13 +354,23 @@ function Home() {
               </p>
 
 
-              <div className="feature-list">
+              <div className="feature-list home-field__list">
+
 
                 <div className="feature-item">
 
-                  <span className="feature-dot" />
+                  <span className="home-field__bee-icon">
+
+                    <img
+                      src={workerBeeIcon}
+                      alt=""
+                      aria-hidden="true"
+                    />
+
+                  </span>
 
                   <div>
+
                     <h3 className="feature-title">
                       100 % software
                     </h3>
@@ -307,6 +379,7 @@ function Home() {
                       No requiere adquirir, instalar ni mantener sensores
                       físicos o cables.
                     </p>
+
                   </div>
 
                 </div>
@@ -314,9 +387,18 @@ function Home() {
 
                 <div className="feature-item">
 
-                  <span className="feature-dot" />
+                  <span className="home-field__bee-icon">
+
+                    <img
+                      src={workerBeeIcon}
+                      alt=""
+                      aria-hidden="true"
+                    />
+
+                  </span>
 
                   <div>
+
                     <h3 className="feature-title">
                       Diagnóstico no invasivo
                     </h3>
@@ -325,6 +407,7 @@ function Home() {
                       Permite realizar una evaluación sanitaria sin
                       intervención física dentro del cajón.
                     </p>
+
                   </div>
 
                 </div>
@@ -332,9 +415,18 @@ function Home() {
 
                 <div className="feature-item">
 
-                  <span className="feature-dot" />
+                  <span className="home-field__bee-icon">
+
+                    <img
+                      src={workerBeeIcon}
+                      alt=""
+                      aria-hidden="true"
+                    />
+
+                  </span>
 
                   <div>
+
                     <h3 className="feature-title">
                       Gestión basada en datos
                     </h3>
@@ -343,9 +435,11 @@ function Home() {
                       Permite una gestión de precisión basada en datos
                       objetivos y oportunos.
                     </p>
+
                   </div>
 
                 </div>
+
 
               </div>
 
@@ -362,22 +456,43 @@ function Home() {
           RECONOCIMIENTOS
       ===================================================== */}
 
-      <section className="section">
+      <section className="section home-awards">
 
         <div className="container">
 
-          <div className="section-header">
 
-            <h2 className="section-title">
+          <div className="home-awards__header">
+
+            <img
+              src={crownIcon}
+              alt=""
+              aria-hidden="true"
+              className="home-awards__crown"
+            />
+
+            <h2 className="section__title">
               Reconocimientos
             </h2>
+
+            <p className="home-awards__description">
+              AuraBee ha sido reconocido en distintas instancias de innovación,
+              emprendimiento y desarrollo tecnológico.
+            </p>
 
           </div>
 
 
-          <div className="cards-grid">
+          <div className="cards-grid home-awards__grid">
 
-            <article className="card">
+
+            {/* PRIMER LUGAR — SEMILLERO */}
+
+            <article className="card home-awards__card">
+
+              <span className="home-awards__icon home-awards__icon--yellow">
+                <FaTrophy />
+              </span>
+
               <h3 className="card-title">
                 Primer Lugar
               </h3>
@@ -385,10 +500,18 @@ function Home() {
               <p className="card-text">
                 Semillero USM 2025
               </p>
+
             </article>
 
 
-            <article className="card">
+            {/* PRIMER LUGAR — CHALLENGE */}
+
+            <article className="card home-awards__card">
+
+              <span className="home-awards__icon home-awards__icon--orange">
+                <FaStar />
+              </span>
+
               <h3 className="card-title">
                 Primer Lugar
               </h3>
@@ -396,10 +519,18 @@ function Home() {
               <p className="card-text">
                 Challenge Impact Our Communities GHD – Gobierno de Victoria
               </p>
+
             </article>
 
 
-            <article className="card">
+            {/* TOP 10 */}
+
+            <article className="card home-awards__card">
+
+              <span className="home-awards__icon home-awards__icon--brown">
+                <FaMedal />
+              </span>
+
               <h3 className="card-title">
                 Top 10 Mejores Proyectos
               </h3>
@@ -407,10 +538,18 @@ function Home() {
               <p className="card-text">
                 Impacto Emprendedor UDD – Banco de Chile
               </p>
+
             </article>
 
 
-            <article className="card">
+            {/* MÉRITO INNOVADOR */}
+
+            <article className="card home-awards__card">
+
+              <span className="home-awards__icon home-awards__icon--yellow">
+                <FaLightbulb />
+              </span>
+
               <h3 className="card-title">
                 Mérito Innovador
               </h3>
@@ -418,10 +557,18 @@ function Home() {
               <p className="card-text">
                 Feria de Software 2025 USM
               </p>
+
             </article>
 
 
-            <article className="card">
+            {/* MÉRITO ACADÉMICO */}
+
+            <article className="card home-awards__card">
+
+              <span className="home-awards__icon home-awards__icon--orange">
+                <FaGraduationCap />
+              </span>
+
               <h3 className="card-title">
                 Mérito Académico
               </h3>
@@ -429,10 +576,18 @@ function Home() {
               <p className="card-text">
                 Feria de Software 2025 USM
               </p>
+
             </article>
 
 
-            <article className="card">
+            {/* NETWORKING */}
+
+            <article className="card home-awards__card">
+
+              <span className="home-awards__icon home-awards__icon--brown">
+                <FaHandshake />
+              </span>
+
               <h3 className="card-title">
                 Premio Networking
               </h3>
@@ -440,7 +595,9 @@ function Home() {
               <p className="card-text">
                 Feria de Software 2025 USM
               </p>
+
             </article>
+
 
           </div>
 
@@ -449,34 +606,62 @@ function Home() {
       </section>
 
 
-      {/* =====================================================
-          CTA
-      ===================================================== */}
+{/* =====================================================
+    CTA
+===================================================== */}
 
-      <section className="cta">
+<section className="cta home-cta">
 
-        <div className="container">
+  <div className="container">
 
-          <span className="eyebrow">
-            DA EL PRIMER PASO
-          </span>
+    <div className="cta__content">
 
-          <h2>
-            Empieza a usar AuraBee
-            <br />
-            hoy.
-          </h2>
+      <span className="eyebrow">
+        DA EL PRIMER PASO
+      </span>
 
-          <Link
-            to="/contacto"
-            className="button button--primary"
-          >
-            Comienza Ahora →
-          </Link>
+      <h2>
+        Empieza a usar AuraBee
+        <br />
+        hoy.
+      </h2>
 
-        </div>
+      <ul className="cta__list">
 
-      </section>
+        <li className="cta__item">
+          Conoce una forma más simple de monitorear el estado de tus colmenas
+          desde tu teléfono móvil.
+        </li>
+
+        <li className="cta__item">
+          Accede a herramientas de seguimiento y gestión diseñadas para apoyar
+          el trabajo diario en el apiario.
+        </li>
+
+      </ul>
+
+      <Link
+        to="/contacto"
+        className="cta__button"
+      >
+        Comienza Ahora
+
+        <span className="cta__button-icon">
+          →
+        </span>
+      </Link>
+
+    </div>
+
+
+    <div className="cta__visual">
+      {/* IMGEN PENDTE */}
+    </div>
+
+  </div>
+
+</section>
+
 
     </div>
   );
