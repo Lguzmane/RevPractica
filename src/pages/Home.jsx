@@ -60,22 +60,20 @@ function Home() {
             </h1>
 
             <p className="home-hero__text">
-              AuraBee es un proyecto de investigación aplicada y desarrollo
-              tecnológico enfocado en la apicultura de precisión mediante
-              bioacústica e Inteligencia Artificial.
+              Revisa tu apiario de forma rápida y sencilla usando solo tu
+              teléfono. AuraBee analiza el sonido de tus colmenas con Inteligencia
+              Artificial para detectar si la reina está presente.
             </p>
 
             <p className="home-hero__text">
-              Monitorea y diagnostica el estado sanitario y biológico de las
-              colmenas a través del análisis de las frecuencias acústicas y
-              vibratorias emitidas por la colonia en tiempo real.
+              Ahorra más de un 80 % del tiempo de revisión en terreno, sin necesidad de abrir tus colmenas.
             </p>
 
             <a
               href="#monitoreo"
               className="button button--dark"
             >
-              Comenzar
+              Conoce AuraBee
             </a>
 
           </div>
@@ -83,7 +81,6 @@ function Home() {
         </div>
 
       </section>
-
 
       {/* =====================================================
           MONITOREO
@@ -263,7 +260,7 @@ function Home() {
                   <div>
 
                     <h3 className="feature-title">
-                      Control integral
+                      Diario de campo digital
                     </h3>
 
                     <p className="feature-text">
@@ -645,18 +642,17 @@ function Home() {
         className="cta__button"
       >
         Comienza Ahora
-
-        <span className="cta__button-icon">
-          →
-        </span>
       </Link>
 
     </div>
 
 
     <div className="cta__visual">
-      {/* IMGEN PENDTE */}
-    </div>
+  <img
+    src={queenIcon}
+    alt="Abeja reina AuraBee"
+  />
+</div>
 
   </div>
 
