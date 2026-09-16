@@ -1448,3 +1448,382 @@
   }
 
 }
+
+
+/* ==========================================================
+   CONTACTO
+========================================================== */
+
+
+/* ==========================================================
+   HERO CONTACTO
+========================================================== */
+
+.contact-hero {
+  background-position: center;
+}
+
+.contact-hero .page-hero__content {
+  max-width: 470px;
+}
+
+
+/* ==========================================================
+   FORMULARIO — ENCABEZADO
+========================================================== */
+
+.contact-form-section__header {
+  margin-bottom: 48px;
+}
+
+.contact-form-section__header .eyebrow {
+  margin-bottom: 10px;
+}
+
+.contact-form-section__header .section__title {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================
+   IMAGEN + FORMULARIO
+========================================================== */
+
+.contact-form-section__layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: stretch;
+
+  width: 100%;
+  max-width: 920px;
+
+  margin: 0 auto;
+}
+
+
+/* ==========================================================
+   IMAGEN FORMULARIO
+========================================================== */
+
+.contact-form-section__image {
+  min-width: 0;
+
+  overflow: hidden;
+
+  border-radius: $radius-lg 0 0 $radius-lg;
+}
+
+.contact-form-section__image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* ==========================================================
+   CAJA FORMULARIO
+========================================================== */
+
+.contact-form-section__card {
+  min-width: 0;
+
+  padding: 34px 32px;
+
+  border: 1px solid $color-border;
+  border-left: 0;
+
+  border-radius: 0 $radius-lg $radius-lg 0;
+
+  background: $color-cream-contact;
+}
+
+.contact-form-section__card .section__title {
+  margin-bottom: 26px;
+}
+
+
+/* ==========================================================
+   FORMULARIO
+========================================================== */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+}
+
+.contact-form__field {
+  width: 100%;
+}
+
+.contact-form__field label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: $text-primary;
+
+  font-family: $font-secondary;
+  font-size: $font-small;
+  font-weight: $font-semibold;
+}
+
+.contact-form__field input,
+.contact-form__field textarea {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+
+  background: $color-white;
+  color: $text-primary;
+
+  font-family: $font-secondary;
+  font-size: $font-small;
+}
+
+.contact-form__field input:focus,
+.contact-form__field textarea:focus {
+  border-color: $color-primary;
+
+  outline: none;
+}
+
+.contact-form__field textarea {
+  min-height: 105px;
+
+  resize: vertical;
+}
+
+.contact-form__field input::placeholder,
+.contact-form__field textarea::placeholder {
+  color: $text-muted;
+}
+
+
+/* ==========================================================
+   BOTÓN FORMULARIO
+========================================================== */
+
+.contact-form__button {
+  width: 100%;
+
+  min-height: 44px;
+
+  margin-top: 4px;
+}
+
+
+/* ==========================================================
+   MAPA
+========================================================== */
+
+.contact-map {
+  width: 100%;
+  height: 460px;
+
+  overflow: hidden;
+}
+
+.contact-map img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ==========================================================
+   CTA CONTACTO
+========================================================== */
+
+.contact-cta__content {
+  max-width: 500px;
+}
+
+
+/* ==========================================================
+   INFORMACIÓN DE CONTACTO
+========================================================== */
+
+.contact-cta__info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+
+  margin: 30px 0;
+}
+
+.contact-cta__item {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.contact-cta__icon {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(236, 168, 17, 0.22);
+  color: $color-primary;
+}
+
+.contact-cta__icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.contact-cta__item span {
+  color: $color-primary;
+
+  font-family: $font-secondary;
+  font-size: $font-small;
+  font-weight: $font-bold;
+  letter-spacing: 0.08em;
+}
+
+
+/* ==========================================================
+   CTA — AJUSTES DE ESPACIADO
+========================================================== */
+
+.contact-cta .cta__content > p {
+  margin-bottom: 0;
+}
+
+
+/* ==========================================================
+   RESPONSIVE CONTACTO — TABLET GRANDE
+========================================================== */
+
+@media (max-width: $breakpoint-lg) {
+
+  .contact-form-section__layout {
+    max-width: 860px;
+  }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE CONTACTO — TABLET
+========================================================== */
+
+@media (max-width: $breakpoint-md) {
+
+
+  /* FORMULARIO */
+
+  .contact-form-section__header {
+    margin-bottom: 38px;
+  }
+
+  .contact-form-section__layout {
+    grid-template-columns: 1fr;
+
+    max-width: 600px;
+  }
+
+  .contact-form-section__image {
+    border-radius: $radius-lg $radius-lg 0 0;
+  }
+
+  .contact-form-section__image img {
+    height: 340px;
+  }
+
+  .contact-form-section__card {
+    padding: 32px 28px;
+
+    border: 1px solid $color-border;
+    border-top: 0;
+
+    border-radius: 0 0 $radius-lg $radius-lg;
+  }
+
+
+  /* MAPA */
+
+  .contact-map {
+    height: 400px;
+  }
+
+
+  /* CTA */
+
+  .contact-cta__info {
+    margin: 26px 0;
+  }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE CONTACTO — MÓVIL
+========================================================== */
+
+@media (max-width: $breakpoint-sm) {
+
+
+  /* FORMULARIO */
+
+  .contact-form-section__header {
+    margin-bottom: 30px;
+  }
+
+  .contact-form-section__image img {
+    height: 280px;
+  }
+
+  .contact-form-section__card {
+    padding: 26px 20px;
+  }
+
+  .contact-form {
+    gap: 15px;
+  }
+
+
+  /* MAPA */
+
+  .contact-map {
+    height: 340px;
+  }
+
+
+  /* CTA */
+
+  .contact-cta__info {
+    gap: 12px;
+
+    margin: 24px 0;
+  }
+
+  .contact-cta__icon {
+    width: 34px;
+    height: 34px;
+
+    flex-basis: 34px;
+  }
+
+  .contact-cta__icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+}
