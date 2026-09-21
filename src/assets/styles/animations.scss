@@ -1,3 +1,492 @@
+@use "./variables" as *;
+
+
 /* ==========================================================
    AURABEE — ANIMACIONES
 ========================================================== */
+
+
+/* ==========================================================
+   KEYFRAMES
+========================================================== */
+
+
+/* ------------------------------------------
+   ENTRADA LATERAL DESDE IZQUIERDA
+------------------------------------------ */
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-38px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* ------------------------------------------
+   ENTRADA LATERAL DESDE DERECHA
+------------------------------------------ */
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(38px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* ------------------------------------------
+   FLOTACIÓN DECORATIVA SUAVE
+------------------------------------------ */
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
+/* ------------------------------------------
+   FLOTACIÓN MUY SUAVE
+------------------------------------------ */
+
+@keyframes floatMicro {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+
+/* ==========================================================
+   SECCIONES IMAGEN + TEXTO
+   ANIMACIONES DE ENTRADA
+========================================================== */
+
+
+/* ------------------------------------------
+   IMAGEN A LA IZQUIERDA
+------------------------------------------ */
+
+.section--image-left .section__image {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+.section--image-left .section__content {
+  animation: slideInRight 0.8s ease-out both;
+}
+
+
+/* ------------------------------------------
+   IMAGEN A LA DERECHA
+------------------------------------------ */
+
+.section--image-right .section__content {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+.section--image-right .section__image {
+  animation: slideInRight 0.8s ease-out both;
+}
+
+
+/* ==========================================================
+   SECCIONES ESPECÍFICAS IMAGEN + TEXTO
+========================================================== */
+
+
+/* ------------------------------------------
+   NOSOTROS — NUESTRA EMPRESA
+------------------------------------------ */
+
+.about-company__image {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+.about-company__content {
+  animation: slideInRight 0.8s ease-out both;
+}
+
+
+/* ------------------------------------------
+   NOSOTROS — VALORES
+------------------------------------------ */
+
+.about-values__list {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+.about-values__image {
+  animation: slideInRight 0.8s ease-out both;
+}
+
+
+/* ==========================================================
+   BOTONES
+========================================================== */
+
+.button,
+.cta__button,
+.navbar__download {
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+
+/* ------------------------------------------
+   BOTONES GENERALES
+------------------------------------------ */
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+
+/* ------------------------------------------
+   BOTÓN CTA
+------------------------------------------ */
+
+.cta__button:hover {
+  background: $color-primary-hover;
+
+  transform: translateY(-2px);
+}
+
+.cta__button:active {
+  transform: translateY(0);
+}
+
+
+/* ------------------------------------------
+   BOTÓN NAVBAR
+------------------------------------------ */
+
+.navbar__download:hover {
+  transform: translateY(-1px);
+}
+
+.navbar__download:active {
+  transform: translateY(0);
+}
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+.navbar__link {
+  transition: color 0.22s ease;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.footer__link,
+.footer__legal-link,
+.footer__contact-mail {
+  transition: color 0.22s ease;
+}
+
+
+/* ------------------------------------------
+   REDES SOCIALES
+------------------------------------------ */
+
+.footer__social {
+  transition:
+    background-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.footer__social:hover {
+  transform: scale(1.08);
+}
+
+.footer__social:active {
+  transform: scale(1);
+}
+
+
+/* ------------------------------------------
+   ENLACES A STORES
+------------------------------------------ */
+
+.footer__store-link {
+  transition:
+    transform 0.22s ease,
+    opacity 0.22s ease;
+}
+
+.footer__store-link:hover {
+  transform: scale(1.03);
+}
+
+.footer__store-link:active {
+  transform: scale(1);
+}
+
+
+/* ==========================================================
+   CARDS — HOME
+========================================================== */
+
+.home-monitor__item,
+.home-awards__card {
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.home-monitor__item:hover,
+.home-awards__card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ==========================================================
+   CARDS — APP
+========================================================== */
+
+.app-features__card {
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.app-features__card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ==========================================================
+   CARDS — NOSOTROS
+========================================================== */
+
+.about-values__card {
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.about-values__card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(102, 51, 18, 0.24);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ------------------------------------------
+   NOTICIAS LATERALES
+------------------------------------------ */
+
+.about-news__card:not(:nth-child(2)) {
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+.about-news__card:not(:nth-child(2)):hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ------------------------------------------
+   NOTICIA CENTRAL
+   CONSERVA SU SCALE ORIGINAL
+------------------------------------------ */
+
+.about-news__card:nth-child(2) {
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+.about-news__card:nth-child(2):hover {
+  transform: scale(1.08) translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ==========================================================
+   ICONOS
+========================================================== */
+
+.home-feature-icon,
+.home-management__icon,
+.home-field__bee-icon,
+.home-awards__icon,
+.app-features__icon,
+.app-process__number,
+.about-values__marker,
+.about-purpose__aside-icon,
+.about-purpose__vision-marker,
+.contact-cta__icon {
+  transition:
+    transform 0.22s ease,
+    background-color 0.22s ease,
+    color 0.22s ease;
+}
+
+
+/* ------------------------------------------
+   ICONOS HOME
+------------------------------------------ */
+
+.home-monitor__item:hover .home-feature-icon {
+  transform: scale(1.07);
+}
+
+.home-awards__card:hover .home-awards__icon {
+  transform: scale(1.07);
+}
+
+
+/* ------------------------------------------
+   ICONOS APP
+------------------------------------------ */
+
+.app-features__card:hover .app-features__icon {
+  transform: scale(1.07);
+}
+
+
+/* ------------------------------------------
+   ICONOS NOSOTROS
+------------------------------------------ */
+
+.about-values__card:hover .about-values__marker {
+  transform: scale(1.07);
+}
+
+
+/* ==========================================================
+   FORMULARIO
+========================================================== */
+
+.contact-form__field input,
+.contact-form__field textarea {
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background-color 0.22s ease;
+}
+
+.contact-form__field input:focus,
+.contact-form__field textarea:focus {
+  box-shadow: 0 0 0 3px rgba(236, 168, 17, 0.12);
+}
+
+
+/* ==========================================================
+   CTA — MOVIMIENTO DECORATIVO
+========================================================== */
+
+.cta__visual img {
+  animation: floatSoft 5s ease-in-out infinite;
+}
+
+
+/* ==========================================================
+   ELEMENTOS DECORATIVOS
+========================================================== */
+
+
+/* ------------------------------------------
+   CORONA HOME
+------------------------------------------ */
+
+.home-awards__crown {
+  animation: floatMicro 4s ease-in-out infinite;
+}
+
+
+/* ------------------------------------------
+   ORNAMENTO MISIÓN / VISIÓN
+------------------------------------------ */
+
+.about-purpose__ornament {
+  animation: floatMicro 5s ease-in-out infinite;
+}
+
+
+/* ------------------------------------------
+   ICONOS ILUSTRADOS MISIÓN / VISIÓN
+------------------------------------------ */
+
+.about-purpose__aside-icon img,
+.about-purpose__vision-marker img {
+  transition: transform 0.24s ease;
+}
+
+.about-purpose__aside-icon:hover img,
+.about-purpose__vision-marker:hover img {
+  transform: scale(1.07);
+}
+
+
+/* ==========================================================
+   CONTACTO — ICONOS CTA
+========================================================== */
+
+.contact-cta__item:hover .contact-cta__icon {
+  transform: scale(1.07);
+}
+
+
+/* ==========================================================
+   ACCESIBILIDAD
+   REDUCIR MOVIMIENTO
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+}
