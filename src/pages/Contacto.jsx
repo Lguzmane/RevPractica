@@ -10,8 +10,20 @@ import {
   MdAccessTime
 } from "react-icons/md";
 
+import { useForm } from "@formspree/react";
+
 
 function Contacto() {
+
+  /* =====================================================
+     FORMSPREE
+     Reemplazar "ID_FORMSPREE" por el identificador
+     entregado por Formspree cuando se cree el formulario
+  ===================================================== */
+
+  const [state, handleSubmit] = useForm("ID_FORMSPREE");
+
+
   return (
     <div className="contact-page">
 
@@ -93,91 +105,133 @@ function Contacto() {
                 Envíanos un mensaje
               </h2>
 
-              <form className="contact-form">
 
+              {/* MENSAJE DE ENVÍO EXITOSO */}
 
-                {/* NOMBRE */}
+              {state.succeeded ? (
 
-                <div className="contact-form__field">
+                <div className="contact-form__success">
 
-                  <label htmlFor="nombre">
-                    Nombre completo
-                  </label>
+                  <h3>
+                    Mensaje enviado
+                  </h3>
 
-                  <input
-                    id="nombre"
-                    name="nombre"
-                    type="text"
-                    placeholder="Tu nombre completo"
-                  />
+                  <p>
+                    Tu mensaje fue enviado correctamente.
+                  </p>
 
                 </div>
 
+              ) : (
 
-                {/* CORREO */}
-
-                <div className="contact-form__field">
-
-                  <label htmlFor="correo">
-                    Correo electrónico
-                  </label>
-
-                  <input
-                    id="correo"
-                    name="correo"
-                    type="email"
-                    placeholder="tu@correo.com"
-                  />
-
-                </div>
-
-
-                {/* ASUNTO */}
-
-                <div className="contact-form__field">
-
-                  <label htmlFor="asunto">
-                    Asunto del mensaje
-                  </label>
-
-                  <input
-                    id="asunto"
-                    name="asunto"
-                    type="text"
-                    placeholder="Escribe el asunto de tu mensaje"
-                  />
-
-                </div>
-
-
-                {/* MENSAJE */}
-
-                <div className="contact-form__field">
-
-                  <label htmlFor="mensaje">
-                    Mensaje
-                  </label>
-
-                  <textarea
-                    id="mensaje"
-                    name="mensaje"
-                    placeholder="Escribe tu mensaje aquí..."
-                    rows="5"
-                  />
-
-                </div>
-
-
-                {/* BOTÓN */}
-
-                <button
-                  type="submit"
-                  className="button button--dark contact-form__button"
+                <form
+                  className="contact-form"
+                  onSubmit={handleSubmit}
                 >
-                  Enviar mensaje
-                </button>
 
-              </form>
+
+                  {/* NOMBRE */}
+
+                  <div className="contact-form__field">
+
+                    <label htmlFor="nombre">
+                      Nombre completo
+                    </label>
+
+                    <input
+                      id="nombre"
+                      name="name"
+                      type="text"
+                      placeholder="Tu nombre completo"
+                      required
+                    />
+
+                  </div>
+
+
+                  {/* CORREO */}
+
+                  <div className="contact-form__field">
+
+                    <label htmlFor="correo">
+                      Correo electrónico
+                    </label>
+
+                    <input
+                      id="correo"
+                      name="email"
+                      type="email"
+                      placeholder="tu@correo.com"
+                      required
+                    />
+
+                  </div>
+
+
+                  {/* ASUNTO */}
+
+                  <div className="contact-form__field">
+
+                    <label htmlFor="asunto">
+                      Asunto del mensaje
+                    </label>
+
+                    <input
+                      id="asunto"
+                      name="subject"
+                      type="text"
+                      placeholder="Escribe el asunto de tu mensaje"
+                      required
+                    />
+
+                  </div>
+
+
+                  {/* MENSAJE */}
+
+                  <div className="contact-form__field">
+
+                    <label htmlFor="mensaje">
+                      Mensaje
+                    </label>
+
+                    <textarea
+                      id="mensaje"
+                      name="message"
+                      placeholder="Escribe tu mensaje aquí..."
+                      rows="5"
+                      required
+                    />
+
+                  </div>
+
+
+                  {/* ERROR DE FORMSPREE */}
+
+                  {state.errors && state.errors.length > 0 && (
+
+                    <p className="contact-form__error">
+                      No pudimos enviar tu mensaje. Inténtalo nuevamente.
+                    </p>
+
+                  )}
+
+
+                  {/* BOTÓN */}
+
+                  <button
+                    type="submit"
+                    className="button button--dark contact-form__button"
+                    disabled={state.submitting}
+                  >
+                    {state.submitting
+                      ? "Enviando..."
+                      : "Enviar mensaje"}
+                  </button>
+
+                </form>
+
+              )}
 
             </div>
 
