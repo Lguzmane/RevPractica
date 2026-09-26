@@ -46,6 +46,23 @@
 
 
 /* ------------------------------------------
+   ENTRADA ESCALONADA
+------------------------------------------ */
+
+@keyframes fadeUpItem {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ------------------------------------------
    FLOTACIÓN DECORATIVA SUAVE
 ------------------------------------------ */
 
@@ -78,6 +95,15 @@
 
 
 /* ==========================================================
+   ELEMENTOS ANIMADOS AL ENTRAR AL VIEWPORT
+========================================================== */
+
+[data-animate] {
+  opacity: 0;
+}
+
+
+/* ==========================================================
    SECCIONES IMAGEN + TEXTO
    ANIMACIONES DE ENTRADA
 ========================================================== */
@@ -87,12 +113,12 @@
    IMAGEN A LA IZQUIERDA
 ------------------------------------------ */
 
-.section--image-left .section__image {
-  animation: slideInLeft 0.8s ease-out both;
+.section--image-left .section__image.is-visible {
+  animation: slideInLeft 0.65s ease-out both;
 }
 
-.section--image-left .section__content {
-  animation: slideInRight 0.8s ease-out both;
+.section--image-left .section__content.is-visible {
+  animation: slideInRight 0.65s ease-out both;
 }
 
 
@@ -100,12 +126,12 @@
    IMAGEN A LA DERECHA
 ------------------------------------------ */
 
-.section--image-right .section__content {
-  animation: slideInLeft 0.8s ease-out both;
+.section--image-right .section__content.is-visible {
+  animation: slideInLeft 0.65s ease-out both;
 }
 
-.section--image-right .section__image {
-  animation: slideInRight 0.8s ease-out both;
+.section--image-right .section__image.is-visible {
+  animation: slideInRight 0.65s ease-out both;
 }
 
 
@@ -118,25 +144,73 @@
    NOSOTROS — NUESTRA EMPRESA
 ------------------------------------------ */
 
-.about-company__image {
-  animation: slideInLeft 0.8s ease-out both;
+.about-company__image.is-visible {
+  animation: slideInLeft 0.65s ease-out both;
 }
 
-.about-company__content {
-  animation: slideInRight 0.8s ease-out both;
+.about-company__content.is-visible {
+  animation: slideInRight 0.65s ease-out both;
 }
 
 
 /* ------------------------------------------
-   NOSOTROS — VALORES
+   NOSOTROS — IMAGEN DE VALORES
 ------------------------------------------ */
 
-.about-values__list {
-  animation: slideInLeft 0.8s ease-out both;
+.about-values__image.is-visible {
+  animation: slideInRight 0.65s ease-out both;
 }
 
-.about-values__image {
-  animation: slideInRight 0.8s ease-out both;
+
+/* ==========================================================
+   APP — FUNCIONALIDADES
+   ENTRADA ESCALONADA
+========================================================== */
+
+.app-features__card.is-visible {
+  animation: fadeUpItem 0.4s ease-out both;
+}
+
+.app-features__card:nth-child(1).is-visible {
+  animation-delay: 0s;
+}
+
+.app-features__card:nth-child(2).is-visible {
+  animation-delay: 0.15s;
+}
+
+.app-features__card:nth-child(3).is-visible {
+  animation-delay: 0.3s;
+}
+
+
+/* ==========================================================
+   NOSOTROS — VALORES
+   ENTRADA ESCALONADA
+========================================================== */
+
+.about-values__card.is-visible {
+  animation: fadeUpItem 0.4s ease-out both;
+}
+
+.about-values__card:nth-child(1).is-visible {
+  animation-delay: 0s;
+}
+
+.about-values__card:nth-child(2).is-visible {
+  animation-delay: 0.15s;
+}
+
+.about-values__card:nth-child(3).is-visible {
+  animation-delay: 0.3s;
+}
+
+.about-values__card:nth-child(4).is-visible {
+  animation-delay: 0.45s;
+}
+
+.about-values__card:nth-child(5).is-visible {
+  animation-delay: 0.6s;
 }
 
 
@@ -174,7 +248,6 @@
 
 .cta__button:hover {
   background: $color-primary-hover;
-
   transform: translateY(-2px);
 }
 
@@ -269,7 +342,6 @@
 .home-monitor__item:hover,
 .home-awards__card:hover {
   transform: translateY(-3px);
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
 }
 
@@ -287,8 +359,32 @@
 
 .app-features__card:hover {
   transform: translateY(-3px);
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ------------------------------------------
+   PANTALLAS DE AURABEE
+------------------------------------------ */
+
+.app-screens__phone {
+  position: relative;
+  z-index: 1;
+}
+
+.app-screens__phone img {
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.app-screens__item:hover .app-screens__phone {
+  z-index: 2;
+}
+
+.app-screens__item:hover .app-screens__phone img {
+  transform: scale(1.10);
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.16));
 }
 
 
@@ -305,9 +401,7 @@
 
 .about-values__card:hover {
   transform: translateY(-3px);
-
   border-color: rgba(102, 51, 18, 0.24);
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
@@ -324,7 +418,6 @@
 
 .about-news__card:not(:nth-child(2)):hover {
   transform: translateY(-3px);
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
 }
 
@@ -342,7 +435,6 @@
 
 .about-news__card:nth-child(2):hover {
   transform: scale(1.08) translateY(-3px);
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
 }
 
@@ -489,4 +581,7 @@
     scroll-behavior: auto !important;
   }
 
+  [data-animate] {
+    opacity: 1 !important;
+  }
 }

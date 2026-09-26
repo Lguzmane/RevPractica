@@ -17,11 +17,11 @@ function Contacto() {
 
   /* =====================================================
      FORMSPREE
-     Reemplazar "ID_FORMSPREE" por el identificador
+     Reemplazar ID_FORMSPREE por el identificador
      entregado por Formspree cuando se cree el formulario
   ===================================================== */
 
-  const [state, handleSubmit] = useForm("ID_FORMSPREE");
+  const [state, handleSubmit] = useForm("xbglgyaq");
 
 
   return (

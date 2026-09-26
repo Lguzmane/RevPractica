@@ -1,6 +1,15 @@
+import { useEffect } from "react";
+
 import heroImage from "../assets/images/hero-app.png";
 import featuresImage from "../assets/images/funcionalidades-app.png";
 import ctaImage from "../assets/images/panal_cta.png";
+
+import bienvenidaImage from "../assets/images/Pantalla-Bienvenidos.png";
+import crearCuentaImage from "../assets/images/Pantalla-Crearcuenta.png";
+import misColmenasImage from "../assets/images/Pantalla-Miscolmenas.png";
+import anadirColmenaImage from "../assets/images/Pantalla-Añadircolmena.png";
+import grabacionGuiadaImage from "../assets/images/Pantalla-Grabacionguiada.png";
+import diagnosticoImage from "../assets/images/Pantalla-Diagnostico.png";
 
 import {
   FaWaveSquare,
@@ -10,6 +19,33 @@ import {
 
 
 function App() {
+
+  useEffect(() => {
+    const elements = document.querySelectorAll("[data-animate]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="app-page">
 
@@ -57,7 +93,7 @@ function App() {
 
             {/* CONTENIDO */}
 
-            <div className="section__content">
+            <div className="section__content" data-animate="left">
 
               <span className="eyebrow">
                 TECNOLOGÍA DE PUNTA
@@ -99,15 +135,21 @@ function App() {
             </div>
 
 
-            {/* PANTALLA / MOCKUP */}
+            {/* PANTALLAS DE LA APP */}
 
             <div className="app-ai__visual">
 
-              <div className="app-ai__placeholder">
+              <img
+                src={bienvenidaImage}
+                alt="Pantalla de bienvenida de AuraBee"
+                className="app-ai__image"
+              />
 
-                {/* PANTALLA DE LA APP PENDIENTE */}
-
-              </div>
+              <img
+                src={crearCuentaImage}
+                alt="Pantalla para crear una cuenta en AuraBee"
+                className="app-ai__image"
+              />
 
             </div>
 
@@ -153,7 +195,7 @@ function App() {
 
           <div className="section__row section--image-left">
 
-            <div className="section__image">
+            <div className="section__image" data-animate="left">
 
               <img
                 src={featuresImage}
@@ -166,7 +208,7 @@ function App() {
             <div className="feature-list app-features__list">
 
 
-              <article className="card app-features__card">
+              <article className="card app-features__card" data-animate>
 
                 <div className="app-features__icon">
                   <FaWaveSquare />
@@ -189,7 +231,7 @@ function App() {
               </article>
 
 
-              <article className="card app-features__card">
+              <article className="card app-features__card" data-animate>
 
                 <div className="app-features__icon">
                   <FaBookOpen />
@@ -212,7 +254,7 @@ function App() {
               </article>
 
 
-              <article className="card app-features__card">
+              <article className="card app-features__card" data-animate>
 
                 <div className="app-features__icon">
                   <FaBell />
@@ -242,7 +284,6 @@ function App() {
         </div>
 
       </section>
-
 
       {/* =====================================================
           CÓMO FUNCIONA
@@ -386,7 +427,12 @@ function App() {
             <article className="app-screens__item">
 
               <div className="app-screens__phone">
-                {/* CAPTURA PENDIENTE */}
+
+                <img
+                  src={misColmenasImage}
+                  alt="Pantalla Mis Colmenas de AuraBee"
+                />
+
               </div>
 
               <h3 className="feature-title">
@@ -405,7 +451,12 @@ function App() {
             <article className="app-screens__item">
 
               <div className="app-screens__phone">
-                {/* CAPTURA PENDIENTE */}
+
+                <img
+                  src={anadirColmenaImage}
+                  alt="Pantalla Añadir Colmena de AuraBee"
+                />
+
               </div>
 
               <h3 className="feature-title">
@@ -423,7 +474,12 @@ function App() {
             <article className="app-screens__item">
 
               <div className="app-screens__phone">
-                {/* CAPTURA PENDIENTE */}
+
+                <img
+                  src={grabacionGuiadaImage}
+                  alt="Pantalla Grabación Guiada de AuraBee"
+                />
+
               </div>
 
               <h3 className="feature-title">
@@ -442,7 +498,12 @@ function App() {
             <article className="app-screens__item">
 
               <div className="app-screens__phone">
-                {/* CAPTURA PENDIENTE */}
+
+                <img
+                  src={diagnosticoImage}
+                  alt="Pantalla Diagnóstico de AuraBee"
+                />
+
               </div>
 
               <h3 className="feature-title">
@@ -507,12 +568,12 @@ function App() {
 
           <div className="cta__visual">
 
-  <img
-    src={ctaImage}
-    alt="Panal AuraBee"
-  />
+            <img
+              src={ctaImage}
+              alt="Panal AuraBee"
+            />
 
-</div>
+          </div>
 
 
         </div>

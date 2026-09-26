@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -28,6 +29,40 @@ import crownIcon from "../assets/images/corona_aurabee.png";
 
 
 function Home() {
+
+  useEffect(() => {
+
+    const elements = document.querySelectorAll("[data-animate]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+
+  }, []);
+
+
   return (
     <div className="home">
 
@@ -82,6 +117,7 @@ function Home() {
 
       </section>
 
+
       {/* =====================================================
           MONITOREO
       ===================================================== */}
@@ -95,7 +131,10 @@ function Home() {
 
           <div className="section__row section--image-left">
 
-            <div className="section__image">
+            <div
+              className="section__image"
+              data-animate
+            >
 
               <img
                 src={monitorImage}
@@ -105,7 +144,10 @@ function Home() {
             </div>
 
 
-            <div className="section__content">
+            <div
+              className="section__content"
+              data-animate
+            >
 
               <h2 className="section__title">
                 Monitoreo Inteligente
@@ -213,7 +255,10 @@ function Home() {
 
           <div className="section__row section--image-right">
 
-            <div className="section__content">
+            <div
+              className="section__content"
+              data-animate
+            >
 
               <h2 className="section__title">
                 Todo lo que necesitas para gestionar tus colmenas
@@ -300,7 +345,10 @@ function Home() {
             </div>
 
 
-            <div className="section__image">
+            <div
+              className="section__image"
+              data-animate
+            >
 
               <img
                 src={managementImage}
@@ -318,6 +366,7 @@ function Home() {
 
       {/* =====================================================
           APIARIO
+          ESTÁTICO
       ===================================================== */}
 
       <section className="section section--honey home-field">
@@ -603,60 +652,62 @@ function Home() {
       </section>
 
 
-{/* =====================================================
-    CTA
-===================================================== */}
+      {/* =====================================================
+          CTA
+      ===================================================== */}
 
-<section className="cta home-cta">
+      <section className="cta home-cta">
 
-  <div className="container">
+        <div className="container">
 
-    <div className="cta__content">
+          <div className="cta__content">
 
-      <span className="eyebrow">
-        DA EL PRIMER PASO
-      </span>
+            <span className="eyebrow">
+              DA EL PRIMER PASO
+            </span>
 
-      <h2>
-        Empieza a usar AuraBee
-        <br />
-        hoy.
-      </h2>
+            <h2>
+              Empieza a usar AuraBee
+              <br />
+              hoy.
+            </h2>
 
-      <ul className="cta__list">
+            <ul className="cta__list">
 
-        <li className="cta__item">
-          Conoce una forma más simple de monitorear el estado de tus colmenas
-          desde tu teléfono móvil.
-        </li>
+              <li className="cta__item">
+                Conoce una forma más simple de monitorear el estado de tus colmenas
+                desde tu teléfono móvil.
+              </li>
 
-        <li className="cta__item">
-          Accede a herramientas de seguimiento y gestión diseñadas para apoyar
-          el trabajo diario en el apiario.
-        </li>
+              <li className="cta__item">
+                Accede a herramientas de seguimiento y gestión diseñadas para apoyar
+                el trabajo diario en el apiario.
+              </li>
 
-      </ul>
+            </ul>
 
-      <Link
-        to="/contacto"
-        className="cta__button"
-      >
-        Comienza Ahora
-      </Link>
+            <Link
+              to="/contacto"
+              className="cta__button"
+            >
+              Comienza Ahora
+            </Link>
 
-    </div>
+          </div>
 
 
-    <div className="cta__visual">
-  <img
-    src={queenIcon}
-    alt="Abeja reina AuraBee"
-  />
-</div>
+          <div className="cta__visual">
 
-  </div>
+            <img
+              src={queenIcon}
+              alt="Abeja reina AuraBee"
+            />
 
-</section>
+          </div>
+
+        </div>
+
+      </section>
 
 
     </div>

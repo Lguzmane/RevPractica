@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import heroImage from "../assets/images/hero-nosotros.png";
 import companyImage from "../assets/images/nuestraempresa-nosotros.png";
 import valuesImage from "../assets/images/nuestrosvalores-nosotros.png";
@@ -19,8 +21,43 @@ import {
 
 
 function Nosotros() {
+
+  useEffect(() => {
+
+    const elements = document.querySelectorAll("[data-animate]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+
+  }, []);
+
+
   return (
     <div className="about-page">
+
 
       {/* ======================================================
           HERO
@@ -50,7 +87,10 @@ function Nosotros() {
         <div className="container">
           <div className="section__row section--image-right">
 
-            <div className="section__content about-company__content">
+            <div
+              className="section__content about-company__content"
+              data-animate
+            >
               <span className="eyebrow">
                 SOBRE AURABEE
               </span>
@@ -89,7 +129,10 @@ function Nosotros() {
               </p>
             </div>
 
-            <div className="section__image about-company__image">
+            <div
+              className="section__image about-company__image"
+              data-animate
+            >
               <img
                 src={companyImage}
                 alt="Apiario AuraBee"
@@ -214,7 +257,10 @@ function Nosotros() {
 
               {/* RIGOR CIENTÍFICO */}
 
-              <article className="card about-values__card">
+              <article
+                className="card about-values__card"
+                data-animate
+              >
 
                 <div className="about-values__marker">
                   <FaFlask />
@@ -238,7 +284,10 @@ function Nosotros() {
 
               {/* BIENESTAR ANIMAL */}
 
-              <article className="card about-values__card">
+              <article
+                className="card about-values__card"
+                data-animate
+              >
 
                 <div className="about-values__marker">
                   <MdHealthAndSafety />
@@ -262,7 +311,10 @@ function Nosotros() {
 
               {/* SOSTENIBILIDAD */}
 
-              <article className="card about-values__card">
+              <article
+                className="card about-values__card"
+                data-animate
+              >
 
                 <div className="about-values__marker">
                   <FaLeaf />
@@ -286,7 +338,10 @@ function Nosotros() {
 
               {/* ACCESIBILIDAD */}
 
-              <article className="card about-values__card">
+              <article
+                className="card about-values__card"
+                data-animate
+              >
 
                 <div className="about-values__marker">
                   <MdAccessibilityNew />
@@ -310,7 +365,10 @@ function Nosotros() {
 
               {/* VOCACIÓN REGIONAL */}
 
-              <article className="card about-values__card">
+              <article
+                className="card about-values__card"
+                data-animate
+              >
 
                 <div className="about-values__marker">
                   <MdPublic />
@@ -334,7 +392,10 @@ function Nosotros() {
             </div>
 
 
-            <div className="section__image about-values__image">
+            <div
+              className="section__image about-values__image"
+              data-animate
+            >
               <img
                 src={valuesImage}
                 alt="Tecnología aplicada a la apicultura"
@@ -484,8 +545,10 @@ function Nosotros() {
         </div>
       </section>
 
+
     </div>
   );
 }
+
 
 export default Nosotros;

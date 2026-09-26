@@ -106,21 +106,25 @@ function Footer() {
                   <FaFacebookF />
                 </button>
 
-                <button
-                  type="button"
+                <a
+                  href="https://www.instagram.com/aurabee_usm/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="footer__social"
-                  aria-label="Instagram"
+                  aria-label="Instagram de AuraBee"
                 >
                   <FaInstagram />
-                </button>
+                </a>
 
-                <button
-                  type="button"
+                <a
+                  href="https://www.linkedin.com/company/aurabeee"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="footer__social"
-                  aria-label="LinkedIn"
+                  aria-label="LinkedIn de AuraBee"
                 >
                   <FaLinkedinIn />
-                </button>
+                </a>
 
               </div>
 
@@ -182,30 +186,21 @@ function Footer() {
             <ul className="footer__list">
 
               <li>
-                <button
-                  type="button"
-                  className="footer__link footer__link--button"
+                <NavLink
+                  to="/privacidad"
+                  className="footer__link"
                 >
-                  Políticas de Privacidad
-                </button>
+                  Política de Privacidad
+                </NavLink>
               </li>
 
               <li>
-                <button
-                  type="button"
-                  className="footer__link footer__link--button"
+                <NavLink
+                  to="/terminos"
+                  className="footer__link"
                 >
-                  Términos de Servicio
-                </button>
-              </li>
-
-              <li>
-                <button
-                  type="button"
-                  className="footer__link footer__link--button"
-                >
-                  Soporte
-                </button>
+                  Términos de Uso
+                </NavLink>
               </li>
 
             </ul>
@@ -233,51 +228,9 @@ function Footer() {
             <p className="footer__contact-text">
               Envíanos tus comentarios a:
               <strong className="footer__contact-mail">
-                {" "}PENDIENTE
+                {" "}equipo@aurabee.cl
               </strong>
             </p>
-
-          </div>
-
-
-          {/* LINKS LEGALES */}
-
-          <div className="footer__legal-bottom">
-
-            <button
-              type="button"
-              className="footer__legal-link"
-            >
-              Política de Privacidad
-            </button>
-
-            <button
-              type="button"
-              className="footer__legal-link"
-            >
-              Términos y Condiciones
-            </button>
-
-            <button
-              type="button"
-              className="footer__legal-link"
-            >
-              Aviso de Cookies
-            </button>
-
-            <button
-              type="button"
-              className="footer__legal-link"
-            >
-              Política de Derechos de Autor
-            </button>
-
-            <button
-              type="button"
-              className="footer__legal-link"
-            >
-              Política de Datos
-            </button>
 
           </div>
 

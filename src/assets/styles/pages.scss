@@ -450,7 +450,6 @@
   margin-bottom: 0;
 }
 
-
 /* ==========================================================
    INTELIGENCIA ARTIFICIAL
 ========================================================== */
@@ -459,22 +458,23 @@
   width: 100%;
   max-width: 450px;
 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
   justify-self: center;
 }
 
-.app-ai__placeholder {
+.app-ai__image {
+  display: block;
+
   width: 100%;
-  min-height: $section-image-height;
+  height: auto;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 100%;
 
-  border-radius: $radius-lg;
-
-  background: $color-cream-app;
+  object-fit: contain;
 }
-
 
 /* ==========================================================
    FUNCIONALIDADES
@@ -624,7 +624,6 @@
   background: $color-primary;
 }
 
-
 /* ==========================================================
    PANTALLAS DE AURABEE
 ========================================================== */
@@ -634,44 +633,65 @@
 }
 
 .app-screens__grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
 
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+
+  gap: 0;
 }
 
 .app-screens__item {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   text-align: center;
 }
 
 .app-screens__phone {
   width: 100%;
-  max-width: 160px;
+  height: 420px;
 
-  aspect-ratio: 9 / 18;
+  margin: 0 0 18px;
 
-  margin: 0 auto 18px;
-
-  border: 1px solid $color-primary;
-  border-radius: 18px;
-
-  background: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.app-screens__item:nth-child(2) .app-screens__phone {
-  border-color: $color-orange;
+.app-screens__phone img {
+  display: block;
+
+  width: auto;
+  height: 420px;
+
+  max-width: none;
+  max-height: none;
+
+  object-fit: contain;
 }
 
 .app-screens__item .feature-title {
-  margin-bottom: 7px;
+  width: 100%;
+
+  margin: 0 0 7px;
+
+  text-align: center;
 }
 
 .app-screens__item .feature-text {
-  max-width: 190px;
+  width: 100%;
+  max-width: 210px;
 
   margin: 0 auto;
-}
 
+  text-align: center;
+}
 
 /* ==========================================================
    RESPONSIVE APP
@@ -679,15 +699,28 @@
 
 @media (max-width: $breakpoint-lg) {
 
-  .app-process__grid,
-  .app-screens__grid {
+  .app-process__grid {
     gap: 24px;
   }
 
   .app-process__item:not(:last-child)::after {
     right: -20px;
-
     width: 16px;
+  }
+
+
+  /* PANTALLAS */
+
+  .app-screens__grid {
+    gap: 0;
+  }
+
+  .app-screens__phone {
+    height: 360px;
+  }
+
+  .app-screens__phone img {
+    height: 360px;
   }
 }
 
@@ -711,11 +744,9 @@
   /* IA */
 
   .app-ai__visual {
-    max-width: 100%;
-  }
-
-  .app-ai__placeholder {
-    min-height: 320px;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
   }
 
 
@@ -723,7 +754,6 @@
 
   .app-process__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     gap: 45px 30px;
   }
 
@@ -735,9 +765,20 @@
   /* PANTALLAS */
 
   .app-screens__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 0;
+  }
 
-    gap: 40px 30px;
+  .app-screens__phone {
+    height: 420px;
+  }
+
+  .app-screens__phone img {
+    height: 420px;
+  }
+
+  .app-screens__item .feature-text {
+    max-width: 240px;
   }
 }
 
@@ -768,8 +809,9 @@
 
   /* IA */
 
-  .app-ai__placeholder {
-    min-height: 280px;
+  .app-ai__visual {
+    width: 100%;
+    max-width: 100%;
   }
 
 
@@ -777,7 +819,6 @@
 
   .app-process__grid {
     grid-template-columns: 1fr;
-
     gap: 36px;
   }
 
@@ -790,19 +831,21 @@
 
   .app-screens__grid {
     grid-template-columns: 1fr;
-
-    gap: 36px;
+    gap: 48px;
   }
 
   .app-screens__phone {
-    max-width: 150px;
+    height: 400px;
+  }
+
+  .app-screens__phone img {
+    height: 400px;
   }
 
   .app-screens__item .feature-text {
     max-width: 280px;
   }
 }
-
 /* ==========================================================
    NOSOTROS
 ========================================================== */
@@ -1448,8 +1491,6 @@
   }
 
 }
-
-
 /* ==========================================================
    CONTACTO
 ========================================================== */
@@ -1606,6 +1647,41 @@
 
 
 /* ==========================================================
+   MENSAJE DE ENVÍO EXITOSO
+========================================================== */
+
+.contact-form__success {
+  min-height: 380px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.contact-form__success h3 {
+  margin: 0 0 10px;
+
+  color: $text-primary;
+
+  font-family: $font-primary;
+  font-size: $font-section-title;
+  font-weight: $font-bold;
+}
+
+.contact-form__success p {
+  margin: 0;
+
+  color: $text-secondary;
+
+  font-family: $font-secondary;
+  font-size: $font-body;
+}
+
+
+/* ==========================================================
    BOTÓN FORMULARIO
 ========================================================== */
 
@@ -1757,6 +1833,13 @@
   }
 
 
+  /* MENSAJE DE ENVÍO EXITOSO */
+
+  .contact-form__success {
+    min-height: 300px;
+  }
+
+
   /* MAPA */
 
   .contact-map {
@@ -1796,6 +1879,17 @@
 
   .contact-form {
     gap: 15px;
+  }
+
+
+  /* MENSAJE DE ENVÍO EXITOSO */
+
+  .contact-form__success {
+    min-height: 240px;
+  }
+
+  .contact-form__success h3 {
+    font-size: 28px;
   }
 
 
