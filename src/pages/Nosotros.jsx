@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import DownloadModal from "../components/common/DownloadModal";
 
 import heroImage from "../assets/images/hero-nosotros.png";
 import companyImage from "../assets/images/nuestraempresa-nosotros.png";
@@ -21,6 +23,8 @@ import {
 
 
 function Nosotros() {
+
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
 
   useEffect(() => {
 
@@ -528,6 +532,7 @@ function Nosotros() {
             <button
               type="button"
               className="cta__button"
+              onClick={() => setDownloadModalOpen(true)}
             >
               Descargar AuraBee
             </button>
@@ -544,6 +549,12 @@ function Nosotros() {
 
         </div>
       </section>
+
+
+      <DownloadModal
+        isOpen={downloadModalOpen}
+        onClose={() => setDownloadModalOpen(false)}
+      />
 
 
     </div>

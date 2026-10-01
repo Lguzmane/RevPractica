@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -18,6 +18,8 @@ import {
   FaHandshake
 } from "react-icons/fa";
 
+import DownloadModal from "../components/common/DownloadModal";
+
 import heroImage from "../assets/images/hero-home.png";
 import monitorImage from "../assets/images/monitoreo-home.png";
 import managementImage from "../assets/images/todoloque-home.png";
@@ -29,6 +31,8 @@ import crownIcon from "../assets/images/corona_aurabee.png";
 
 
 function Home() {
+
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
 
   useEffect(() => {
 
@@ -104,12 +108,12 @@ function Home() {
               Ahorra más de un 80 % del tiempo de revisión en terreno, sin necesidad de abrir tus colmenas.
             </p>
 
-            <a
-              href="#monitoreo"
+            <Link
+              to="/app"
               className="button button--dark"
             >
               Conoce AuraBee
-            </a>
+            </Link>
 
           </div>
 
@@ -686,12 +690,13 @@ function Home() {
 
             </ul>
 
-            <Link
-              to="/contacto"
+            <button
+              type="button"
               className="cta__button"
+              onClick={() => setDownloadModalOpen(true)}
             >
               Comienza Ahora
-            </Link>
+            </button>
 
           </div>
 
@@ -708,6 +713,12 @@ function Home() {
         </div>
 
       </section>
+
+
+      <DownloadModal
+        isOpen={downloadModalOpen}
+        onClose={() => setDownloadModalOpen(false)}
+      />
 
 
     </div>

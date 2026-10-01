@@ -675,6 +675,172 @@ p {
   }
 }
 
+/* =========================================================
+   MODAL DESCARGAR APP
+========================================================= */
+
+.download-modal {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.68);
+}
+
+
+/* =========================================================
+   CONTENIDO MODAL
+========================================================= */
+
+.download-modal__content {
+  position: relative;
+
+  width: 100%;
+  max-width: 500px;
+
+  padding: 42px 38px;
+
+  border-radius: $radius-lg;
+
+  background: $color-white;
+
+  text-align: center;
+}
+
+.download-modal__content .eyebrow {
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   CERRAR MODAL
+========================================================= */
+
+.download-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: $text-primary;
+
+  font-family: $font-secondary;
+  font-size: 26px;
+  font-weight: $font-regular;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.download-modal__close:hover {
+  color: $color-primary;
+
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   TEXTO MODAL
+========================================================= */
+
+.download-modal__title {
+  margin: 0 0 14px;
+
+  color: $text-primary;
+}
+
+.download-modal__text {
+  max-width: 390px;
+
+  margin: 0 auto 28px;
+
+  color: $text-secondary;
+
+  font-family: $font-secondary;
+  font-size: $font-body;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   TIENDAS
+========================================================= */
+
+.download-modal__stores {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+}
+
+.download-modal__store {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.65;
+}
+
+.download-modal__store img {
+  display: block;
+
+  width: auto;
+  height: 44px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   RESPONSIVE MODAL — MÓVIL
+========================================================= */
+
+@media (max-width: $breakpoint-sm) {
+
+  .download-modal {
+    padding: 18px;
+  }
+
+  .download-modal__content {
+    max-width: 420px;
+
+    padding: 38px 22px 30px;
+  }
+
+  .download-modal__stores {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .download-modal__store img {
+    height: 42px;
+  }
+
+}
 
 /* ==========================================================
    FOOTER

@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import DownloadModal from "../components/common/DownloadModal";
 
 import heroImage from "../assets/images/hero-app.png";
 import featuresImage from "../assets/images/funcionalidades-app.png";
@@ -19,6 +21,8 @@ import {
 
 
 function App() {
+
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
 
   useEffect(() => {
     const elements = document.querySelectorAll("[data-animate]");
@@ -557,6 +561,7 @@ function App() {
             <button
               type="button"
               className="cta__button"
+              onClick={() => setDownloadModalOpen(true)}
             >
               Descargar Ahora
             </button>
@@ -579,6 +584,12 @@ function App() {
         </div>
 
       </section>
+
+
+      <DownloadModal
+        isOpen={downloadModalOpen}
+        onClose={() => setDownloadModalOpen(false)}
+      />
 
 
     </div>
