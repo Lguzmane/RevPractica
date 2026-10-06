@@ -411,10 +411,10 @@ function Nosotros() {
         </div>
       </section>
 
-
-      {/* ======================================================
+{/*
+      ======================================================
           NOTICIAS DESTACADAS
-      ====================================================== */}
+      ======================================================
 
       <section className="section about-news">
         <div className="container">
@@ -431,13 +431,12 @@ function Nosotros() {
 
           </div>
 
-
           <div className="cards-grid about-news__grid">
 
             <article className="card about-news__card">
 
               <div className="about-news__image">
-                {/* IMAGEN PENDIENTE */}
+                IMAGEN PENDIENTE
               </div>
 
               <h3 className="card-title">
@@ -450,11 +449,10 @@ function Nosotros() {
 
             </article>
 
-
             <article className="card about-news__card">
 
               <div className="about-news__image">
-                {/* IMAGEN PENDIENTE */}
+                IMAGEN PENDIENTE
               </div>
 
               <h3 className="card-title">
@@ -467,11 +465,10 @@ function Nosotros() {
 
             </article>
 
-
             <article className="card about-news__card">
 
               <div className="about-news__image">
-                {/* IMAGEN PENDIENTE */}
+                IMAGEN PENDIENTE
               </div>
 
               <h3 className="card-title">
@@ -488,8 +485,7 @@ function Nosotros() {
 
         </div>
       </section>
-
-
+*/}
       {/* ======================================================
           CTA
       ====================================================== */}

@@ -21,7 +21,7 @@ function Contacto() {
      entregado por Formspree cuando se cree el formulario
   ===================================================== */
 
-  const [state, handleSubmit] = useForm("xbglgyaq");
+  const [state, handleSubmit] = useForm("maeqqnyr");
 
 
   return (
